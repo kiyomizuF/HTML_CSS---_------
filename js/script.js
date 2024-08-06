@@ -38,4 +38,17 @@ $(function () {
       $(".top-btn").fadeOut();
     }
   });
+
+  $('a[href^="#"]').click(function () {
+    const href = $(this).attr("href");
+    const target = $(href == "#" ? "html" : href);
+    const position = target.offset().top;
+    $("body, html").animate(
+      {
+        scrollTop: position,
+      },
+      400,
+      "swing"
+    );
+  });
 });
