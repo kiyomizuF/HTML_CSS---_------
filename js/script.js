@@ -64,4 +64,17 @@ $(function () {
       }
     });
   });
+
+  // クリックでモーダルで画像を拡大する
+  $(".item img").click(function () {
+    const src = $(this).attr("src");
+    $(".modal-content").attr("src", src);
+    $(".modal-wrap").fadeIn(200);
+    return false;
+  });
+
+  $(".close-btn").click(function () {
+    $(".modal-wrap").fadeOut(200);
+    return false;
+  });
 });
