@@ -42,6 +42,16 @@ nav a {
   font-weight: bold;
 }
 
+/* section */
+section {
+  opacity: 0;
+  transition: all 2s;
+}
+
+.fadeIn {
+  opacity: 1;
+}
+
 h1 {
   padding-top: 60px;
   padding-bottom: 40px;

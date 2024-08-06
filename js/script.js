@@ -39,6 +39,7 @@ $(function () {
     }
   });
 
+  // スムーズスクロール
   $('a[href^="#"]').click(function () {
     const href = $(this).attr("href");
     const target = $(href == "#" ? "html" : href);
@@ -50,5 +51,17 @@ $(function () {
       400,
       "swing"
     );
+  });
+
+  // スクロールでコンテンツをフェードイン
+  $(window).scroll(function () {
+    const wHeight = $(window).height();
+    const wScroll = $(window).scrollTop();
+    $("section").each(function () {
+      const sPosition = $(this).offset().top;
+      if (wScroll > sPosition - wHeight + 100) {
+        $(this).addClass("fadeIn");
+      }
+    });
   });
 });
